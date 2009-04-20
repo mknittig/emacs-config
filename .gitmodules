@@ -1,0 +1,51 @@
+[submodule "textmate.el"]
+	path = vendor/textmate.el
+	url = git://github.com/defunkt/textmate.el
+[submodule "vendor/yasnippets-rails"]
+	path = vendor/yasnippets-rails
+	url = git://github.com/eschulte/yasnippets-rails.git
+[submodule "vendor/sinatra_el"]
+	path = vendor/sinatra_el
+	url = git://github.com/eschulte/sinatra_el.git
+[submodule "vendor/yasnippets-rspec"]
+	path = vendor/yasnippets-rspec
+	url = git://github.com/gary/yasnippets-rspec.git
+[submodule "vendor/git-emacs"]
+	path = vendor/git-emacs
+	url = git://github.com/tsgates/git-emacs.git
+[submodule "vendor/iswitch-menu"]
+	path = vendor/iswitch-menu
+	url = git://github.com/joodie/iswitch-menu.git
+[submodule "vendor/markdown-mode"]
+	path = vendor/markdown-mode
+	url = git://github.com/defunkt/markdown-mode.git
+[submodule "vendor/cucumber.el"]
+	path = vendor/cucumber.el
+	url = git://github.com/michaelklishin/cucumber.el.git
+[submodule "vendor/far-search-mode"]
+	path = vendor/far-search-mode
+	url = git://github.com/aemoncannon/far-search-mode.git
+[submodule "vendor/magit"]
+	path = vendor/magit
+	url = git://github.com/technomancy/magit.git
+[submodule "vendor/fuzzy-find-in-project"]
+	path = vendor/fuzzy-find-in-project
+	url = git://github.com/avvo/fuzzy-find-in-project.git
+[submodule "vendor/cheat.el"]
+	path = vendor/cheat.el
+	url = git://github.com/defunkt/cheat.el.git
+[submodule "vendor/emacs-rails"]
+	path = vendor/emacs-rails
+	url = git://github.com/relevance/emacs-rails.git
+[submodule "vendor/rspec-mode"]
+	path = vendor/rspec-mode
+	url = git://github.com/pezra/rspec-mode.git
+[submodule "vendor/icicles"]
+	path = vendor/icicles
+	url = git://github.com/tarsius/icicles.git
+[submodule "vendor/ecb"]
+	path = vendor/ecb
+	url = git://github.com/pat-maddox/ecb.git
+[submodule "vendor/cedet"]
+	path = vendor/cedet
+	url = git://github.com/emacs-pkg-mirrors/cedet.git
