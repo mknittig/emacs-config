@@ -138,4 +138,5 @@ exec-to-string command, but it works and seems fast"
 (require 'rspec-mode)
 
 ;; cucumber
-(require 'cucumber-mode)
+;(require 'cucumber-mode)
+(load "~/.emacs.d/vendor/cucumber.el/cucumber-mode")

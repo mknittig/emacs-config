@@ -1,4 +1,5 @@
-(require 'package)
+(load "~/.emacs.d/elpa/package")
+;(require 'package)
 (package-initialize)
 
 (defvar packages (list
@@ -8,8 +9,10 @@
                   'highlight-parentheses
                   'inf-ruby
                   'js2-mode
+                  'json
                   'jump
                   'nav
+                  'nxml
                   'rinari
                   'ruby-compilation
                   'ruby-mode
