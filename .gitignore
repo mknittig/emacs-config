@@ -1,4 +1,7 @@
 anything-*-adaptive-history
 eproject.lst
-elpa
+places
+elpa/*
+!elpa/package.el
 *~
+vendor/nxhtml/etc/schema/xhtml-loader.rnc
