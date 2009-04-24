@@ -14,6 +14,7 @@
 (add-to-list 'load-path "~/.emacs.d/vendor/magit")
 (add-to-list 'load-path "~/.emacs.d/vendor/markdown-mode")
 (add-to-list 'load-path "~/.emacs.d/vendor/misc")
+(add-to-list 'load-path "~/.emacs.d/vendor/python-mode")
 (add-to-list 'load-path "~/.emacs.d/vendor/rdavis")
 (add-to-list 'load-path "~/.emacs.d/vendor/redo")
 (add-to-list 'load-path "~/.emacs.d/vendor/ruby-block")

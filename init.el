@@ -23,6 +23,7 @@
 (load "~/.emacs.d/modes")
 (load "~/.emacs.d/markup")
 (load "~/.emacs.d/ruby")
+(load "~/.emacs.d/python")
 (load "~/.emacs.d/vcs")
 (load "~/.emacs.d/snippets")
 
