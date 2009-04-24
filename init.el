@@ -1,5 +1,10 @@
 ;;; init.el
 
+;; personal infos
+(setq user-full-name "Markus Knittig")
+(defvar user-mail-at "@")
+(setq user-mail-address (concat "markus" user-mail-at "myd0.de"))
+
 ;; ready, set, go!
 (defvar *emacs-load-start* (current-time))
 
@@ -21,6 +26,7 @@
 (load "~/.emacs.d/bindings")
 (load "~/.emacs.d/lisp")
 (load "~/.emacs.d/modes")
+(load "~/.emacs.d/gnus")
 (load "~/.emacs.d/markup")
 (load "~/.emacs.d/ruby")
 (load "~/.emacs.d/python")
