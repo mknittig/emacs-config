@@ -5,3 +5,6 @@ elpa/*
 !elpa/package.el
 *~
 vendor/nxhtml/etc/schema/xhtml-loader.rnc
+.svn
+.bzr
+.hg
