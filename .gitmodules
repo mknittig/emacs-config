@@ -1,9 +1,6 @@
 [submodule "textmate.el"]
 	path = vendor/textmate.el
 	url = git://github.com/defunkt/textmate.el
-[submodule "vendor/yasnippets-rails"]
-	path = vendor/yasnippets-rails
-	url = git://github.com/eschulte/yasnippets-rails.git
 [submodule "vendor/sinatra_el"]
 	path = vendor/sinatra_el
 	url = git://github.com/eschulte/sinatra_el.git
