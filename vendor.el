@@ -23,5 +23,4 @@
 (add-to-list 'load-path "~/.emacs.d/vendor/sinatra_el")
 (add-to-list 'load-path "~/.emacs.d/vendor/textmate.el")
 (add-to-list 'load-path "~/.emacs.d/vendor/yaml-mode")
-;(add-to-list 'load-path "~/.emacs.d/vendor/yasnippets-rails")
-;(add-to-list 'load-path "~/.emacs.d/vendor/yasnippets-rspec")
+(add-to-list 'load-path "~/.emacs.d/vendor/yasnippet")

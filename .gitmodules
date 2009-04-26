@@ -7,9 +7,6 @@
 [submodule "vendor/sinatra_el"]
 	path = vendor/sinatra_el
 	url = git://github.com/eschulte/sinatra_el.git
-[submodule "vendor/yasnippets-rspec"]
-	path = vendor/yasnippets-rspec
-	url = git://github.com/gary/yasnippets-rspec.git
 [submodule "vendor/git-emacs"]
 	path = vendor/git-emacs
 	url = git://github.com/tsgates/git-emacs.git
