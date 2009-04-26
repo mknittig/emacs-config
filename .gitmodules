@@ -49,3 +49,6 @@
 [submodule "vendor/ruby-emacs"]
 	path = vendor/ruby-emacs
 	url = git://github.com/smtlaissezfaire/ruby-emacs.git
+[submodule "vendor/yasnippets-rspec"]
+	path = vendor/yasnippets-rspec
+	url = git@github.com:mknittig/yasnippets-rspec.git
