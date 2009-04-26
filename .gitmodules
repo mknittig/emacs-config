@@ -58,3 +58,6 @@
 [submodule "vendor/snippets/text-mode/django-mode"]
 	path = vendor/snippets/text-mode/django-mode
 	url = git://github.com/jonatkinson/yasnippet-django.git
+[submodule "vendor/snippets/text-mode/sh-mode"]
+	path = vendor/snippets/text-mode/sh-mode
+	url = git://github.com/Chrononaut/yasnippet-sh-mode.git
