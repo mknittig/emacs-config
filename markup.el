@@ -20,20 +20,21 @@
 ;; css
 (autoload 'css-mode "css-mode" "Mode for editing CSS files" t)
 (add-to-list 'auto-mode-alist '("\\.css$" . css-mode))
-(add-hook 'css-mode-hook
-         (lambda()
-           (local-set-key (kbd "<return>") 'newline-and-indent)
-))
+(add-hook 'css-mode-hook 'set-reindent-then-newline-and-indent)
+(setq css-indent-level 2)
 
 ;; yaml
-(require 'yaml-mode)
+(autoload 'yaml-mode "yaml-mode" nil t)
 (add-to-list 'auto-mode-alist '("\\.yml$" . yaml-mode))
+(add-hook 'yaml-mode-hook 'set-reindent-then-newline-and-indent)
 
 ;; haml
 (require 'haml-mode nil 't)
 (require 'sass-mode nil 't)
 (add-to-list 'auto-mode-alist '("\\.haml$" . haml-mode))
 (add-to-list 'auto-mode-alist '("\\.sass$" . sass-mode))
+(add-hook 'haml-mode-hook 'set-reindent-then-newline-and-indent)
+(add-hook 'sass-mode-hook 'set-reindent-then-newline-and-indent)
 
 ;; markdown
 (autoload 'markdown-mode "markdown-mode.el"

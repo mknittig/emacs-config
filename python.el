@@ -7,3 +7,4 @@
              (set (make-variable-buffer-local 'beginning-of-defun-function)
                   'py-beginning-of-def-or-class)
              (setq outline-regexp "def\\|class ")))
+(add-hook 'python-mode-hook 'set-reindent-then-newline-and-indent)
