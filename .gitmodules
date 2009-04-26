@@ -55,3 +55,6 @@
 [submodule "vendor/yasnippets-rails"]
 	path = vendor/yasnippets-rails
 	url = git@github.com:mknittig/yasnippets-rails.git
+[submodule "vendor/snippets/text-mode/django-mode"]
+	path = vendor/snippets/text-mode/django-mode
+	url = git://github.com/jonatkinson/yasnippet-django.git
