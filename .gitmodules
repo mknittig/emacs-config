@@ -49,3 +49,6 @@
 [submodule "vendor/cedet"]
 	path = vendor/cedet
 	url = git://github.com/emacs-pkg-mirrors/cedet.git
+[submodule "vendor/ruby-emacs"]
+	path = vendor/ruby-emacs
+	url = git://github.com/smtlaissezfaire/ruby-emacs.git

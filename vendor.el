@@ -17,6 +17,7 @@
 (add-to-list 'load-path "~/.emacs.d/vendor/python-mode")
 (add-to-list 'load-path "~/.emacs.d/vendor/rdavis")
 (add-to-list 'load-path "~/.emacs.d/vendor/redo")
+(add-to-list 'load-path "~/.emacs.d/vendor/ruby-emacs")
 (add-to-list 'load-path "~/.emacs.d/vendor/ruby-block")
 (add-to-list 'load-path "~/.emacs.d/vendor/rspec-mode")
 (add-to-list 'load-path "~/.emacs.d/vendor/sinatra_el")
