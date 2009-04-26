@@ -7,9 +7,6 @@
   "Run an inferior Ruby process")
 (autoload 'inf-ruby-keys "inf-ruby"
   "Set local key defs for inf-ruby in ruby-mode")
-(add-hook 'ruby-mode-hook
-	  '(lambda ()
-	     (inf-ruby-keys)))
 
 ;; Rake files are ruby, too, as are gemspecs.
 (add-to-list 'auto-mode-alist '("\\.rake$" . ruby-mode))
@@ -29,17 +26,15 @@
                            )))
             (set (make-local-variable 'indent-tabs-mode) 'nil)
             (set (make-local-variable 'tab-width) 2)
-            (define-key ruby-mode-map "C-m" 'newline-and-indent) ;Not sure if this line is 100% right but it works!
             (require 'ruby-electric)
             (ruby-electric-mode t)
-            ))
+            (inf-ruby-keys)))
 
 (eval-after-load 'ruby-mode
   '(progn
      ;; work around possible elpa bug
      (ignore-errors (require 'ruby-compilation))
      (setq ruby-use-encoding-map nil)
-     (add-hook 'ruby-mode-hook 'inf-ruby-keys)
      (define-key ruby-mode-map (kbd "RET") 'reindent-then-newline-and-indent)
      (define-key ruby-mode-map (kbd "C-M-h") 'backward-kill-word)
      (define-key ruby-mode-map (kbd "C-c l") "lambda")))
@@ -48,11 +43,6 @@
 
 ;; If you have Emacs 19.2x or older, use rubydb2x
 (autoload 'rubydb "rubydb3x" "Ruby debugger" t)
-
-;; If you have Emacs 19.2x or older, use rubydb2x
-(autoload 'rubydb "rubydb3x" "Ruby debugger" t)
-;; uncomment the next line if you want syntax highlighting
-(add-hook 'ruby-mode-hook 'turn-on-font-lock)
 
 ;; ruby-block
 (require 'ruby-block)
