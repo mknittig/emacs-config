@@ -52,3 +52,6 @@
 [submodule "vendor/yasnippets-rspec"]
 	path = vendor/yasnippets-rspec
 	url = git@github.com:mknittig/yasnippets-rspec.git
+[submodule "vendor/yasnippet"]
+	path = vendor/yasnippet
+	url = git://github.com/bretthoerner/yasnippet.git
