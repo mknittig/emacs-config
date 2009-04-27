@@ -2,7 +2,7 @@
 (yas/initialize)
 (yas/load-directory "~/.emacs.d/vendor/yasnippet/snippets")
 (yas/load-directory "~/.emacs.d/vendor/yasnippets-rspec/rspec-snippets")
-(yas/load-directory "~/.emacs.d/vendor/yasnippets-rspec/rails-snippets")
+(yas/load-directory "~/.emacs.d/vendor/yasnippets-rails/rails-snippets")
 
 (setq yas/buffer-local-condition
       '(or (not (or (string= "font-lock-comment-face"
