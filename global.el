@@ -30,12 +30,12 @@
   (setq frame-title-format '(buffer-file-name "%f" ("%b")))
   (tool-bar-mode -1))
 
-(setq make-backup-files nil) 
+(setq make-backup-files nil)
 (setq query-replace-highlight t)
 (setq search-highlight t)
 (setq font-lock-maximum-decoration t)
 (fset 'yes-or-no-p 'y-or-n-p)
-(setq require-final-newline t) 
+(setq require-final-newline t)
 (setq default-major-mode 'text-mode)
 
 ;; Save a list of recent files visited.
@@ -101,11 +101,11 @@
 ;(add-hook 'ruby-mode-hook 'my-coding-hook)
 ;(add-hook 'js2-mode-hook 'my-coding-hook)
 
-(require 'rcodetools)
-(require 'icicles-rcodetools)
+;(require 'rcodetools)
+;(require 'icicles-rcodetools)
 
-(require 'anything-rcodetools)
-(require 'anything-config)
+;(require 'anything-rcodetools)
+;(require 'anything-config)
 
 ;; Install mode-compile to give friendlier compiling support!
 (autoload 'mode-compile "mode-compile"
