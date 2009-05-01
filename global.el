@@ -30,12 +30,12 @@
   (setq frame-title-format '(buffer-file-name "%f" ("%b")))
   (tool-bar-mode -1))
 
-(setq make-backup-files nil) 
+(setq make-backup-files nil)
 (setq query-replace-highlight t)
 (setq search-highlight t)
 (setq font-lock-maximum-decoration t)
 (fset 'yes-or-no-p 'y-or-n-p)
-(setq require-final-newline t) 
+(setq require-final-newline t)
 (setq default-major-mode 'text-mode)
 
 ;; Save a list of recent files visited.
@@ -121,3 +121,6 @@
 ;; textmate
 (require 'textmate)
 (textmate-mode)
+
+;; find unbound keystrokes
+(autoload 'describe-unbound-keys "unbound" "Find convenient unbound keystrokes" t nil)
