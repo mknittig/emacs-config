@@ -101,11 +101,11 @@
 ;(add-hook 'ruby-mode-hook 'my-coding-hook)
 ;(add-hook 'js2-mode-hook 'my-coding-hook)
 
-(require 'rcodetools)
-(require 'icicles-rcodetools)
+;(require 'rcodetools)
+;(require 'icicles-rcodetools)
 
-(require 'anything-rcodetools)
-(require 'anything-config)
+;(require 'anything-rcodetools)
+;(require 'anything-config)
 
 ;; Install mode-compile to give friendlier compiling support!
 (autoload 'mode-compile "mode-compile"
