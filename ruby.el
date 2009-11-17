@@ -32,6 +32,13 @@
             (ruby-electric-mode t)
             (inf-ruby-keys)))
 
+(defun ruby-insert-end ()
+  "Insert \"end\" at point and reindent current line."
+  (interactive)
+  (insert "end")
+  (ruby-indent-line t)
+  (end-of-line))
+
 (eval-after-load 'ruby-mode
   '(progn
      ;; work around possible elpa bug
