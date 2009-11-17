@@ -78,10 +78,12 @@
 ;;;###autoload
 (define-mumamo-multi-major-mode nxhtml-mumamo-mode
   "Turn on multiple major modes for (X)HTML with main mode `nxhtml-mode'.
-This covers inlined style and javascript and PHP."
+This covers inlined style and javascript and PHP.
+
+See also `mumamo-alt-php-tags-mode'."
   ("nXhtml Family" nxhtml-mode
    (mumamo-chunk-xml-pi
-    ;;mumamo-chunk-xml-pi2
+    mumamo-chunk-alt-php
     mumamo-chunk-inlined-style
     mumamo-chunk-inlined-script
     mumamo-chunk-style=
@@ -152,7 +154,10 @@ This also covers inlined style and javascript."
   ("Genshi HTML Family" nxhtml-genshi-mode
    (mumamo-chunk-genshi%
     mumamo-chunk-genshi$
+    mumamo-chunk-py:=
+    mumamo-chunk-py:match
     mumamo-chunk-xml-pi
+    mumamo-chunk-alt-php
     mumamo-chunk-inlined-style
     mumamo-chunk-inlined-script
     mumamo-chunk-style=
@@ -194,7 +199,6 @@ This also covers inlined style and javascript."
    (
     mumamo-chunk-mjt$
     mumamo-chunk-xml-pi
-    ;;mumamo-chunk-xml-pi2
     mumamo-chunk-inlined-style
     mumamo-chunk-inlined-script
     mumamo-chunk-style=
@@ -210,7 +214,27 @@ This also covers inlined style and javascript."
 This also covers inlined style and javascript."
   ("Smarty nXhtml Family" nxhtml-mode
    (mumamo-chunk-xml-pi
+    mumamo-chunk-style=
+    mumamo-chunk-onjs=
+    ;;mumamo-chunk-inlined-style
+    ;;mumamo-chunk-inlined-script
+    mumamo-chunk-smarty-literal
+    mumamo-chunk-smarty-t
+    mumamo-chunk-smarty-comment
     mumamo-chunk-smarty
+    )))
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;; GSP
+
+;;;###autoload
+(define-mumamo-multi-major-mode gsp-nxhtml-mumamo-mode
+  "Turn on multiple major modes for GSP with main mode `nxhtml-mode'.
+This also covers inlined style and javascript."
+  ("GSP nXhtml Family" nxhtml-mode
+   (mumamo-chunk-gsp
+    mumamo-chunk-inlined-style
+    mumamo-chunk-inlined-script
     mumamo-chunk-style=
     mumamo-chunk-onjs=
     )))

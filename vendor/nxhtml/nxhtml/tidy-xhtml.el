@@ -1937,6 +1937,7 @@ POSITION are not used in this case. "
 )
 
 (defvar tidy-menu-symbol nil)
+;;(tidy-build-menu (&optional map)
 ;;;###autoload
 (defun tidy-build-menu (&optional map)
   "Set up the tidy menu in MAP.
@@ -1949,6 +1950,7 @@ Used to set up a Tidy menu in your favourite mode."
     ;;(or map (setq map (current-local-map)))
     (easy-menu-remove tidy-menu)
     (easy-menu-define tidy-menu-symbol map "Menu for Tidy" tidy-menu)
+    (setq tidy-menu-symbol (delete "Tidy" tidy-menu-symbol))
     (easy-menu-add tidy-menu map))
   t)
 
@@ -2006,6 +2008,12 @@ Used to set up a Tidy menu in your favourite mode."
       (beginning-of-line)
       (1+ (count-lines 1 (point))))))
 
+(defun tidy-goto-line (line)
+  (save-restriction
+    (widen)
+    (goto-char (point-min))
+    (forward-line (1- line))))
+
 (defun tidy-describe-options ()
   "Interactively access documentation strings for `tidy-' variables."
   (interactive)
@@ -2058,7 +2066,7 @@ Used to set up a Tidy menu in your favourite mode."
                 (insert "\n"))
            ((< count two-third-length) ;; third-length <= count < two-third-length
             (if (= count third-length)
-                (goto-line start-line)
+                (tidy-goto-line start-line)
               (forward-line 1))
             (end-of-line)
             (setq start (point))
@@ -2070,7 +2078,7 @@ Used to set up a Tidy menu in your favourite mode."
             (setq end (point)))
            (t                          ;; two-third-length <= count < length
             (if (= count two-third-length)
-                (goto-line start-line)
+                (tidy-goto-line start-line)
               (forward-line 1))
             (end-of-line)
             (setq start (point))
@@ -2277,6 +2285,7 @@ of the buffer still a hopefully suitable header is added before
 calling tidy."
 ;; Fix-me: copy back parts outside visible region
   (interactive)
+  (message "starting tidy-buffer")
   (let* ((is-narrowed (buffer-narrowed-p))
          (validation-header (when (boundp 'rngalt-validation-header)
                               (let ((header (nth 2 rngalt-validation-header)))
@@ -2758,15 +2767,6 @@ called."
           (when win
             (set-window-point win (point-max))
             ))
-;;         (run-with-idle-timer 0.1 nil
-;;                              (lambda (procbuf start end)
-;;                                (with-current-buffer procbuf
-;;                                  (font-lock-fontify-region start end)
-;;                                  ))
-;;                              (current-buffer)
-;;                              start
-;;                              (point-max)
-;;                              )
         ))))
 
 ;;;}}} +

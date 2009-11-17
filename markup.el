@@ -2,8 +2,7 @@
 (load "~/.emacs.d/vendor/nxhtml/util/tabkey2.el")
 
 ;; nxhtml
-(setq *nxhtml-autostart-file* (expand-file-name "~/.emacs.d/vendor/nxhtml/autostart.el"))
-(load *nxhtml-autostart-file*)
+(load "~/.emacs.d/vendor/nxhtml/autostart.el")
 (setq
       nxhtml-global-minor-mode t
       mumamo-chunk-coloring 'submode-colored
@@ -12,9 +11,10 @@
       rng-nxml-auto-validate-flag nil
       nxml-degraded t)
 (add-to-list 'auto-mode-alist '("\\.html$" . nxhtml-mumamo-mode))
+(add-to-list 'auto-mode-alist '("\\.rhtml$" . eruby-nxhtml-mumamo-mode))
 (add-to-list 'auto-mode-alist '("\\.html\\.erb$" . eruby-nxhtml-mumamo-mode))
 
-(add-hook 'nxhtml-mumamo-mode-hook 'tabkey2-mode)
+;; (add-hook 'nxhtml-mumamo-mode-hook 'tabkey2-mode)
 (add-hook 'eruby-nxhtml-mumamo-mode-hook 'tabkey2-mode)
 
 ;; css

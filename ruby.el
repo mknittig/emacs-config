@@ -20,7 +20,7 @@
 
 (add-hook 'ruby-mode-hook
           (lambda()
-            (add-hook 'local-write-file-hooks
+            (add-hook 'write-file-hooks
                       '(lambda()
                          (save-excursion
                            (untabify (point-min) (point-max))
@@ -61,8 +61,8 @@
 projects.  I know this is a hack to put all the logic in the
 exec-to-string command, but it works and seems fast"
    (delq nil (mapcar '(lambda(line)
-			(if (string-match "rake \\([^ ]+\\)" line) (match-string 1 line)))
-		     (split-string (shell-command-to-string "rake -T") "[\n]"))))
+                        (if (string-match "rake \\([^ ]+\\)" line) (match-string 1 line)))
+                     (split-string (shell-command-to-string "rake -T") "[\n]"))))
 
 (defun rake (task)
   (interactive (list (completing-read "Rake (default: default): "
@@ -115,7 +115,7 @@ exec-to-string command, but it works and seems fast"
 ;(setq rinari-tags-file-name "TAGS")
 ;(setq rinari-major-modes
 ;      (list 'mumamo-after-change-major-mode-hook 'dired-mode-hook 'ruby-mode-hook
-;	    'css-mode-hook 'yaml-mode-hook 'javascript-mode-hook))
+;           'css-mode-hook 'yaml-mode-hook 'javascript-mode-hook))
 
 ;; Rails
 ;(require 'rails)

@@ -3,7 +3,7 @@
 ;; Author: Lennart Borgman <lennart dot borgman at gmail dot com >
 ;; Maintainer:
 ;; Created: Wed Dec 07 15:35:09 2005
-;; Version: 0.97
+(defconst winsize:version "0.98") ;;Version: 0.97
 ;; Lxast-Updated: Sun Nov 18 02:14:52 2007 (3600 +0100)
 ;; Keywords:
 ;; Compatibility:
@@ -66,6 +66,7 @@
 
 (eval-when-compile (require 'windmove))
 (eval-when-compile (require 'winsav nil t))
+(require 'ourcomments-widgets)
 
 ;;; Custom variables
 
@@ -108,25 +109,6 @@ makes the mouse jump a few times."
 
 (defvar widget-command-prompt-value-history nil
   "History of input to `widget-function-prompt-value'.")
-
-(define-widget 'command 'restricted-sexp
-  "A Lisp function."
-  :complete-function (lambda ()
-                       (interactive)
-                       (lisp-complete-symbol 'commandp))
-  :prompt-value 'widget-field-prompt-value
-  :prompt-internal 'widget-symbol-prompt-internal
-  :prompt-match 'commandp
-  :prompt-history 'widget-command-prompt-value-history
-  :action 'widget-field-action
-  :match-alternatives '(commandp)
-  :validate (lambda (widget)
-              (unless (commandp (widget-value widget))
-                (widget-put widget :error (format "Invalid command: %S"
-                                                  (widget-value widget)))
-                widget))
-  :value 'ignore
-  :tag "Command")
 
 (defvar winsize-keymap nil
   "Keymap used by `resize-windows'.")
@@ -1024,9 +1006,11 @@ should be one of 'left, 'up, 'right and 'down."
           (when use-colors
             (set-face-attribute 'mode-line-inactive nil :background inactive-color)
             (set-face-attribute 'mode-line nil :background active-color))))
-    (set-face-attribute 'mode-line-inactive nil :background winsize-old-mode-line-inactive-bg)
+    (when winsize-old-mode-line-inactive-bg
+      (set-face-attribute 'mode-line-inactive nil :background winsize-old-mode-line-inactive-bg))
     (setq winsize-old-mode-line-inactive-bg nil)
-    (set-face-attribute 'mode-line nil :background winsize-old-mode-line-bg)
+    (when winsize-old-mode-line-bg
+      (set-face-attribute 'mode-line nil :background winsize-old-mode-line-bg))
     (setq winsize-old-mode-line-bg nil)))
 
 (defvar winsize-short-help-message nil
@@ -1080,7 +1064,7 @@ should be one of 'left, 'up, 'right and 'down."
     (setq winsize-selected-window-overlay nil))
   (when active
     (with-current-buffer (window-buffer (selected-window))
-      (let ((ovl (make-overlay (point-min) (point-max))))
+      (let ((ovl (make-overlay (point-min) (point-max) nil t)))
         (setq winsize-selected-window-overlay ovl)
         (overlay-put ovl 'window (selected-window))
         (overlay-put ovl 'pointer 'arrow)
@@ -1099,17 +1083,18 @@ should be one of 'left, 'up, 'right and 'down."
 
 (defun winsize-move-mouse ()
   ;;(setq winsize-move-mouse (- winsize-move-mouse))
-  (let* ((fxy (mouse-pixel-position))
-         (f (car fxy))
-         (x (cadr fxy))
-         (y (cddr fxy))
-         (m (mod winsize-move-mouse 2))
-         (d (* (if (= 0 m) 1 -1) 1)))
-    (set-mouse-pixel-position f (+ d x) (+ d y))
-    (when (< 1 winsize-move-mouse)
-      (setq winsize-move-mouse (1- winsize-move-mouse))
-      (setq winsize-make-mouse-prominent-timer
-            (run-with-timer 0.2 nil 'winsize-move-mouse)))))
+  (save-match-data ;; runs in timer
+    (let* ((fxy (mouse-pixel-position))
+           (f (car fxy))
+           (x (cadr fxy))
+           (y (cddr fxy))
+           (m (mod winsize-move-mouse 2))
+           (d (* (if (= 0 m) 1 -1) 1)))
+      (set-mouse-pixel-position f (+ d x) (+ d y))
+      (when (< 1 winsize-move-mouse)
+        (setq winsize-move-mouse (1- winsize-move-mouse))
+        (setq winsize-make-mouse-prominent-timer
+              (run-with-timer 0.2 nil 'winsize-move-mouse))))))
 
 (defun winsize-make-mouse-prominent-f (doit)
   (when (and winsize-make-mouse-prominent-timer
