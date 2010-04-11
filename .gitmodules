@@ -61,3 +61,6 @@
 [submodule "vendor/snippets/text-mode/sh-mode"]
 	path = vendor/snippets/text-mode/sh-mode
 	url = git://github.com/Chrononaut/yasnippet-sh-mode.git
+[submodule "vendor/scala-mode"]
+	path = vendor/scala-mode
+	url = git@github.com:mknittig/emacs-config.git
