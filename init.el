@@ -32,6 +32,7 @@
 (load "~/.emacs.d/python")
 (load "~/.emacs.d/vcs")
 (load "~/.emacs.d/snippets")
+(load "~/.emacs.d/scala")
 
 ;; finish!
 (message "Loaded in %ds"
